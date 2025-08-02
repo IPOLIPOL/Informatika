@@ -8,3 +8,6 @@
 
 
 [![diagram](visualizations/diagram.svg)](visualizations/LanguageGraph-page2.svg)
+
+<img src="https://raw.githubusercontent.com/IPOLIPOL/Informatika/main/visualizations/LanguageGraph-page2.svg" alt="Diagram" width="100%" />
+
