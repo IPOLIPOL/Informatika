@@ -7,3 +7,4 @@
 📌 [Click to open full-size diagram](visualizations/LanguageGraph-page2.svg)
 
 
+[![diagram](visualizations/diagram.svg)](visualizations/LanguageGraph-page2.svg)
