@@ -1,0 +1,286 @@
+@startuml LanguageGraph
+!include <edgy/edgy>
+
+skinparam headerAlignment left
+skinparam footerAlignment left
+skinparam headerFontSize 10
+skinparam footerFontSize 10
+skinparam headerFontName Monospace
+skinparam footerFontName Monospace
+skinparam titleFontName Monospace
+skinparam legendBackgroundColor white
+skinparam legendBorderColor black
+skinparam legendFontColor black
+
+header 
+Diagram depicting the relationships 
+between programming languages, compilers 
+and virtual machines
+end header
+
+title Language Graph \n %page%
+
+footer Created by IPOL %date% %time%
+
+skinparam linetype ortho
+skinparam defaultTextAlignment center
+skinparam NodeFontColor black
+skinparam NodeBorderColor black
+skinparam NodeBackgroundColor #e4cdefff
+skinparam ComponentFontColor black
+skinparam ComponentBackgroundColor #b5e4eaff
+skinparam ArrowColor darkgray
+skinparam BackgroundColor #fefefe
+
+
+' ЯЗЫКИ
+rectangle "Python" as Python
+rectangle "Java" as Java
+rectangle "JavaScript" as JavaScript
+rectangle "C" as C
+rectangle "C++" as Cpp
+rectangle "Go" as Go
+rectangle "Rust" as Rust
+rectangle "Ruby" as Ruby
+rectangle "PHP" as PHP
+rectangle "C#" as CSharp
+rectangle "Swift" as Swift
+rectangle "Kotlin" as Kotlin
+rectangle "TypeScript" as TypeScript
+rectangle "Haskell" as Haskell
+rectangle "Scala" as Scala
+rectangle "Perl" as Perl
+rectangle "Lua" as Lua
+rectangle "Elixir" as Elixir
+rectangle "Erlang" as Erlang
+rectangle "R" as R
+rectangle "Clojure" as Clojure
+rectangle "Lisp" as Lisp
+rectangle "Fortran" as Fortran
+
+' КОМПИЛЯТОРЫ
+component "CPython" as CPython
+component "GCC" as GCC
+component "Clang" as Clang
+component "Go Compiler (gc)" as GoCompiler
+component "rustc" as rustc
+component "MRI Ruby" as MRI
+component "Zend Engine" as Zend
+component ".NET / Roslyn" as Roslyn
+component "Swift Compiler" as SwiftCompiler
+component "Kotlin/JVM" as KotlinJVM
+component "tsc" as TSC
+component "GHC" as GHC
+component "Scala Compiler" as ScalaCompiler
+component "perl5" as Perl5
+component "PUC-Rio Lua" as LuaImpl
+component "GNU R" as GNU_R
+component "Clojure on JVM" as ClojureJVM
+component "SBCL / CLISP" as LispImpl
+component "GFortran" as GFortran
+
+' ВИРТУАЛЬНЫЕ МАШИНЫ / РАНТАЙМЫ (node)
+node "HotSpot JVM" as HotSpot
+node "V8" as V8
+node "BEAM VM" as BEAM
+
+' ЯЗЫК → РЕАЛИЗАЦИЯ
+Python --> CPython
+Java --> HotSpot
+JavaScript --> V8
+C --> GCC
+Cpp --> GCC
+C --> Clang
+Cpp --> Clang
+Go --> GoCompiler
+Rust --> rustc
+Ruby --> MRI
+PHP --> Zend
+CSharp --> Roslyn
+Swift --> SwiftCompiler
+Kotlin --> KotlinJVM
+TypeScript --> TSC
+Haskell --> GHC
+Scala --> ScalaCompiler
+Perl --> Perl5
+Lua --> LuaImpl
+Elixir --> BEAM
+Erlang --> BEAM
+R --> GNU_R
+Clojure --> ClojureJVM
+Lisp --> LispImpl
+Fortran --> GFortran
+GFortran --> GCC
+
+' РЕАЛИЗАЦИЯ → НАПИСАНО НА
+CPython --> C
+HotSpot --> Cpp
+V8 --> Cpp
+GCC --> C
+Clang --> Cpp
+GoCompiler --> Go
+rustc --> Rust
+MRI --> C
+Zend --> C
+Roslyn --> CSharp
+SwiftCompiler --> Cpp
+KotlinJVM --> Java
+TSC --> TypeScript
+GHC --> Haskell
+ScalaCompiler --> Scala
+Perl5 --> C
+LuaImpl --> C
+BEAM --> C
+GNU_R --> C
+GNU_R --> "Fortran"
+ClojureJVM --> Java
+LispImpl --> C
+
+
+' ОБОЗНАЧЕНИЯ
+cloud {
+component "Compiler" as Comp
+node "VirtualMachine" as VM
+}
+
+caption Курс Информатики
+
+newpage
+
+skinparam legendBackgroundColor white
+skinparam legendBorderColor white
+skinparam legendFontColor black
+
+header 
+Diagram depicting the basic definitions
+ and their relationships 
+end header
+
+title Definitions \n %page%
+
+footer Created by IPOL %date% %time%
+
+skinparam linetype curved
+
+legend
+| | <b>Обозначения</b>|
+| 🔹| Определение|
+| ▭| Среда/Система/Модуль/Компонент|
+| 📄| Артефакт |
+| →| Связь/зависимость|
+end legend
+
+' ОПРЕДЕЛЕНИЯ
+
+rectangle "Compiler" as Compiler {
+card CompileP[
+🔹 Компиляция (Static Compilation)
+....
+Процесс перевода исходного кода программы
+из одного языка (обычно высокого уровня)
+в другой до запуска программы:
+_> либо в машинный код (для нативного 
+исполнения),
+_> либо в байткод (для последующей 
+интерпретации или JIT-компиляции).
+]
+}
+rectangle "Runtime" as Runtime {
+
+card RunT [
+🔹 Исполняющая среда (Runtime)
+....
+Набор библиотек и/или механизмов,
+которые работают во время исполнения 
+программы и предоставляют
+функциональность, которая не входит
+в сам язык, но нужна для его работы.
+]
+
+rectangle "VirtualMachine" as VirM {
+rectangle "Interpreter" as InterPret {
+card InterP [
+🔹 Интерпретация (Interpretation)
+....
+Процесс пошагового анализа и исполнения
+программы на лету, без предварительной 
+компиляции в машинный код.
+Интерпретатор читает исходный 
+код или байткод и непосредственно 
+выполняет инструкции.
+]
+}
+rectangle "JIT-Compiler" as JIT{
+card JITP [
+🔹 Компиляция на лету (Just-in-Time Compilation)
+....
+Процесс преобразования байткода в 
+машинный код во время выполнения.
+Обычно только "горячие участки" 
+(часто выполняемый код).
+]
+}
+}
+artifact "Native Binary Executable" as Out2 {
+card NativeBinaryExecutable [
+🔹 Executbale (Machine code)
+....
+Бинарный код, содеражащий
+машинные инструкции,
+предназначенный для CPU.
+_> Платформозависимый
+_> Файлы <i><color:blue>.exe, .bin, .out</color></i>
+]
+}
+}
+
+artifact "Binary Bytecode" as Byte {
+card ByteCode [
+🔹 Байткод (Bytecode)
+....
+Бинарный, но всё ещё ""абстрактный"" код,
+ предназначенный не для CPU, а для 
+ виртуальной машины.
+_> Платформонезависимый
+_> Файлы <i><color:blue>.class, .pyc</color></i>
+]
+}
+
+artifact "Source code" as SourceC {
+card SourceCode [
+🔹 Исходный код (Source code)
+....
+Human-readable, plain text 
+representation of a program written 
+in a high-level programming language.
+_> Файлы <i><color:blue>.c, .js, .py</color></i>
+]
+}
+
+artifact "Program Output"as Out1 {
+card Output [
+🔹 Результат выполнения программы
+....
+Observable result produced by a
+program during or after its execution.
+It can include text printed to 
+the console, files written to disk, 
+network messages, graphical 
+interfaces, or other side effects 
+depending on the program’s logic.
+]
+}
+
+
+$flow(SourceC, CompileP, "input")
+$flow(SourceC, VirM, "input")
+$flow(ByteCode, CompileP, "")
+$flow(ByteCode, VirM, "input")
+$flow(CompileP, ByteCode, "")
+$flow(Runtime, Out1, "output")
+$flow(CompileP, Out2, "output")
+
+
+caption Курс Информатики
+
+@enduml
