@@ -57,6 +57,7 @@ rectangle "R" as R
 rectangle "Clojure" as Clojure
 rectangle "Lisp" as Lisp
 rectangle "Fortran" as Fortran
+rectangle "Assembly" as Ass
 
 ' КОМПИЛЯТОРЫ
 component "CPython" as CPython
@@ -78,6 +79,7 @@ component "GNU R" as GNU_R
 component "Clojure on JVM" as ClojureJVM
 component "SBCL / CLISP" as LispImpl
 component "GFortran" as GFortran
+component "Assembler" as ASMB #LightGreen
 
 ' ВИРТУАЛЬНЫЕ МАШИНЫ / РАНТАЙМЫ (node)
 node "HotSpot JVM" as HotSpot
@@ -111,6 +113,7 @@ Clojure --> ClojureJVM
 Lisp --> LispImpl
 Fortran --> GFortran
 GFortran --> GCC
+Ass --> ASMB
 
 ' РЕАЛИЗАЦИЯ → НАПИСАНО НА
 CPython --> C
@@ -135,12 +138,18 @@ GNU_R --> C
 GNU_R --> "Fortran"
 ClojureJVM --> Java
 LispImpl --> C
-
+ASMB--> C
+ASMB--> Cpp
 
 ' ОБОЗНАЧЕНИЯ
 cloud {
+component "Assembler" as ASM #LightGreen
 component "Compiler" as Comp
 node "VirtualMachine" as VM
+rectangle "Programming language " as Lang
+Comp <--> Lang : реализация
+VM <--> Lang : реализация
+ASM --> Lang : реализация
 }
 
 caption Курс Информатики
