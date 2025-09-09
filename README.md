@@ -37,6 +37,8 @@
 
 <img src="https://raw.githubusercontent.com/IPOLIPOL/Informatika/main/visualizations/OOP_hex.svg" alt="Diagram" width="100%"/>
 
+##### Interfaces an Strong Typing
+
 OOP insists that classes specify the API (application programming interface) or simply ```interface```, that their objects present to other objects. This interface is specified as a class type definition and a collection of methods for this type, with the arguments for each method being of specified types. This specification is enforced by the complier or runtime system, which requires that the types of parameters that are actually passed to methods rigidly confomr with the type specified in the interface. This requirement is known as a ```strong typing```.
 
 [^1]: [Википедия — Формальный язык](https://ru.wikipedia.org/wiki/%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA) 
