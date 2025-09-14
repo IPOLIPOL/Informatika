@@ -35,7 +35,7 @@
 
 #### Пример выполнения программы на языке С:
 
-<img src="https://raw.githubusercontent.com/IPOLIPOL/Informatika/main/visualizations/C_program_execution" alt="Diagram" width="100%"/>
+<img src="https://raw.githubusercontent.com/IPOLIPOL/Informatika/main/visualizations/C_program_execution.svg" alt="Diagram" width="100%"/>
 
 #### Объектно-ориентированный подход
 
