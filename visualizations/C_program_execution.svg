@@ -124,7 +124,7 @@
     • Resolves external symbol references • Combines object files + libraries
   </text>
   <text x="250" y="690" font-family="Arial, sans-serif" font-size="11" fill="#555">
-    • Creates final executable • Sets up memory layout & entry point
+    • Creates final executable • Sets up memory layout &amp; entry point
   </text>
   
   <!-- Big Arrow to OS -->
