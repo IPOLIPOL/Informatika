@@ -33,6 +33,10 @@
 
 <img src="https://raw.githubusercontent.com/IPOLIPOL/Informatika/main/visualizations/LanguageGraph-page2.svg" alt="Diagram" width="100%"/>
 
+#### Пример выполнения программы на языке С:
+
+<img src="https://raw.githubusercontent.com/IPOLIPOL/Informatika/main/visualizations/C_program_execution" alt="Diagram" width="100%"/>
+
 #### Объектно-ориентированный подход
 
 <img src="https://raw.githubusercontent.com/IPOLIPOL/Informatika/main/visualizations/OOP_hex.svg" alt="Diagram" width="100%"/>
