@@ -1,193 +1,205 @@
-<svg width="900" height="1100" viewBox="0 0 900 1100" xmlns="http://www.w3.org/2000/svg">
+<svg width="900" height="1250" viewBox="0 0 900 1250" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="900" height="1100" fill="#f8f9fa"/>
+  <rect width="900" height="1250" fill="#f8f9fa"/>
   
   <!-- Title -->
   <text x="450" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">
-    C Program Execution Process - Three Main Environments
+    C Program Lifecycle - Three Main phases
   </text>
   
-  <!-- DEVELOPMENT ENVIRONMENT -->
-  <rect x="50" y="60" width="800" height="120" fill="#e8f4fd" stroke="#3498db" stroke-width="3" rx="10"/>
-  <text x="70" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2980b9">
-    1. DEVELOPMENT ENVIRONMENT
+  <!-- OPERATING SYSTEM - Main container -->
+  <rect x="30" y="60" width="840" height="1150" fill="#f0f0f0" stroke="#2c3e50" stroke-width="4" rx="15"/>
+  <text x="50" y="85" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">
+    OPERATING SYSTEM 
   </text>
-  <text x="400" y="85" font-family="Arial, sans-serif" font-size="14" fill="#2980b9">
-    (IDE, Text Editor, Code Editor)
+  <text x="50" y="105" font-family="Arial, sans-serif" font-size="14" fill="#2c3e50">
+    All development tools and processes run as OS processes
   </text>
   
-  <rect x="80" y="105" width="140" height="60" fill="#fff" stroke="#3498db" stroke-width="2" rx="5"/>
-  <text x="150" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Source Code</text>
-  <text x="150" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">hello.c</text>
-  <text x="150" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">.c file</text>
+  <!-- DEVELOPMENT PHASE -->
+  <rect x="60" y="130" width="780" height="140" fill="#e8f4fd" stroke="#3498db" stroke-width="3" rx="10"/>
+  <text x="80" y="155" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2980b9">
+    PHASE 1: DEVELOPMENT
+  </text>
+  <text x="350" y="155" font-family="Arial, sans-serif" font-size="14" fill="#2980b9">
+    (IDE/Text Editor as OS Process)
+  </text>
   
-  <text x="250" y="125" font-family="Arial, sans-serif" font-size="12" fill="#555">
+  <rect x="90" y="175" width="140" height="70" fill="#fff" stroke="#3498db" stroke-width="2" rx="5"/>
+  <text x="160" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Source Code</text>
+  <text x="160" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">hello.c</text>
+  <text x="160" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">.c file</text>
+  
+  <text x="260" y="190" font-family="Arial, sans-serif" font-size="12" fill="#555">
     • Human-readable C source code
   </text>
-  <text x="250" y="145" font-family="Arial, sans-serif" font-size="12" fill="#555">
+  <text x="260" y="210" font-family="Arial, sans-serif" font-size="12" fill="#555">
     • Contains #include, #define, comments
   </text>
-  <text x="250" y="165" font-family="Arial, sans-serif" font-size="12" fill="#555">
-    • Written by programmer in IDE/editor
+  <text x="260" y="230" font-family="Arial, sans-serif" font-size="12" fill="#555">
+    • Created using IDE/editor (VS Code, vim, etc.)
+  </text>
+  <text x="260" y="250" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">
+    • IDE runs as an OS process with file system access
   </text>
   
-  <!-- Big Arrow to GCC -->
-  <path d="M 450 185 L 450 220" stroke="#2c3e50" stroke-width="2" fill="none" marker-end="url(#bigarrow)"/>
-  <text x="460" y="205" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50">gcc hello.c -o hello</text>
+  <!-- Arrow to compilation -->
+  <path d="M 450 280 L 450 320" stroke="#2c3e50" stroke-width="1.5" fill="none" marker-end="url(#bigarrow)"/>
+  <text x="460" y="305" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50">gcc hello.c -o hello</text>
   
-  <!-- GCC ENVIRONMENT - Large container -->
-  <rect x="50" y="230" width="800" height="500" fill="#fffacd" stroke="#f39c12" stroke-width="4" rx="10"/>
-  <text x="70" y="255" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e67e22">
-    2. GCC TOOLCHAIN ENVIRONMENT
+  <!-- COMPILATION PHASE - GCC ENVIRONMENT -->
+  <rect x="60" y="330" width="780" height="540" fill="#fffacd" stroke="#f39c12" stroke-width="3" rx="10"/>
+  <text x="80" y="355" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e67e22">
+    PHASE 2: COMPILATION
   </text>
-  <text x="400" y="255" font-family="Arial, sans-serif" font-size="14" fill="#e67e22">
-    (GNU Compiler Collection - All steps automated)
+  <text x="350" y="355" font-family="Arial, sans-serif" font-size="14" fill="#e67e22">
+    (GCC Toolchain as OS Process)
+  </text>
+  <text x="80" y="375" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">
+    GCC spawns multiple sub-processes, managed by OS process scheduler
   </text>
   
   <!-- Step 1: Preprocessor inside GCC -->
-  <rect x="80" y="280" width="740" height="90" fill="#fff2e6" stroke="#e67e22" stroke-width="2" rx="8"/>
-  <text x="100" y="305" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d35400">
-    Step 1: C Preprocessor (cpp)
+  <rect x="90" y="390" width="720" height="90" fill="#fff2e6" stroke="#e67e22" stroke-width="2" rx="8"/>
+  <text x="110" y="415" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d35400">
+    Step 1: C Preprocessor (cpp) - OS subprocess
   </text>
   
-  <rect x="100" y="315" width="120" height="45" fill="#fff" stroke="#e67e22" stroke-width="1" rx="3"/>
-  <text x="160" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Preprocessed</text>
-  <text x="160" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Code (.i)</text>
+  <rect x="110" y="425" width="120" height="45" fill="#fff" stroke="#e67e22" stroke-width="1" rx="3"/>
+  <text x="170" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Preprocessed</text>
+  <text x="170" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Code (.i)</text>
   
-  <text x="250" y="330" font-family="Arial, sans-serif" font-size="11" fill="#555">
+  <text x="250" y="440" font-family="Arial, sans-serif" font-size="11" fill="#555">
     • Expands #include directives • Processes #define macros
   </text>
-  <text x="250" y="345" font-family="Arial, sans-serif" font-size="11" fill="#555">
+  <text x="250" y="455" font-family="Arial, sans-serif" font-size="11" fill="#555">
     • Handles #ifdef, #ifndef • Removes comments
   </text>
   
   <!-- Internal arrow -->
-  <path d="M 160 370 L 160 390" stroke="#d35400" stroke-width="2" fill="none" marker-end="url(#smallarrow)"/>
+  <path d="M 170 480 L 170 500" stroke="#d35400" stroke-width="2" fill="none" marker-end="url(#smallarrow)"/>
   
   <!-- Step 2: Compiler inside GCC -->
-  <rect x="80" y="395" width="740" height="90" fill="#f0f8ff" stroke="#8e44ad" stroke-width="2" rx="8"/>
-  <text x="100" y="420" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7d3c98">
-    Step 2: C Compiler (cc1)
+  <rect x="90" y="505" width="720" height="90" fill="#f0f8ff" stroke="#8e44ad" stroke-width="2" rx="8"/>
+  <text x="110" y="530" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7d3c98">
+    Step 2: C Compiler (cc1) - OS subprocess
   </text>
   
-  <rect x="100" y="430" width="120" height="45" fill="#fff" stroke="#8e44ad" stroke-width="1" rx="3"/>
-  <text x="160" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Assembly</text>
-  <text x="160" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Code (.s)</text>
+  <rect x="110" y="540" width="120" height="45" fill="#fff" stroke="#8e44ad" stroke-width="1" rx="3"/>
+  <text x="170" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Assembly</text>
+  <text x="170" y="575" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Code (.s)</text>
   
-  <text x="250" y="445" font-family="Arial, sans-serif" font-size="11" fill="#555">
+  <text x="250" y="555" font-family="Arial, sans-serif" font-size="11" fill="#555">
     • Lexical &amp; syntax analysis • Semantic analysis &amp; type checking
   </text>
-  <text x="250" y="460" font-family="Arial, sans-serif" font-size="11" fill="#555">
+  <text x="250" y="570" font-family="Arial, sans-serif" font-size="11" fill="#555">
     • Code optimization • Generates assembly language
   </text>
   
   <!-- Internal arrow -->
-  <path d="M 160 485 L 160 505" stroke="#7d3c98" stroke-width="2" fill="none" marker-end="url(#smallarrow)"/>
+  <path d="M 170 595 L 170 615" stroke="#7d3c98" stroke-width="2" fill="none" marker-end="url(#smallarrow)"/>
   
   <!-- Step 3: Assembler inside GCC -->
-  <rect x="80" y="510" width="740" height="90" fill="#f0fff0" stroke="#27ae60" stroke-width="2" rx="8"/>
-  <text x="100" y="535" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#229954">
-    Step 3: Assembler (as)
+  <rect x="90" y="620" width="720" height="90" fill="#f0fff0" stroke="#27ae60" stroke-width="2" rx="8"/>
+  <text x="110" y="645" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#229954">
+    Step 3: Assembler (as) - OS subprocess
   </text>
   
-  <rect x="100" y="545" width="120" height="45" fill="#fff" stroke="#27ae60" stroke-width="1" rx="3"/>
-  <text x="160" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Object Code</text>
-  <text x="160" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">(.o)</text>
+  <rect x="110" y="655" width="120" height="45" fill="#fff" stroke="#27ae60" stroke-width="1" rx="3"/>
+  <text x="170" y="675" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Object Code</text>
+  <text x="170" y="690" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">(.o)</text>
   
-  <text x="250" y="560" font-family="Arial, sans-serif" font-size="11" fill="#555">
+  <text x="250" y="670" font-family="Arial, sans-serif" font-size="11" fill="#555">
     • Converts assembly to machine code • Creates relocatable object file
   </text>
-  <text x="250" y="575" font-family="Arial, sans-serif" font-size="11" fill="#555">
+  <text x="250" y="685" font-family="Arial, sans-serif" font-size="11" fill="#555">
     • Contains unresolved external references
   </text>
   
   <!-- Library files inside GCC environment -->
-  <rect x="600" y="545" width="140" height="45" fill="#fff" stroke="#27ae60" stroke-width="1" rx="3"/>
-  <text x="670" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">System Libraries</text>
-  <text x="670" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">libc.a, libm.a, etc.</text>
+  <rect x="630" y="655" width="140" height="45" fill="#fff" stroke="#27ae60" stroke-width="1" rx="3"/>
+  <text x="700" y="675" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">System Libraries</text>
+  <text x="700" y="690" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">libc.a, libm.a, etc.</text>
   
   <!-- Arrows to linker -->
-  <path d="M 160 600 L 160 620" stroke="#229954" stroke-width="2" fill="none" marker-end="url(#smallarrow)"/>
-  <path d="M 670 600 L 670 620" stroke="#229954" stroke-width="2" fill="none" marker-end="url(#smallarrow)"/>
+  <path d="M 170 710 L 170 730" stroke="#229954" stroke-width="2" fill="none" marker-end="url(#smallarrow)"/>
+  <path d="M 670 710 L 670 730" stroke="#229954" stroke-width="2" fill="none" marker-end="url(#smallarrow)"/>
   
   <!-- Step 4: Linker inside GCC -->
-  <rect x="80" y="625" width="740" height="90" fill="#fff0f5" stroke="#e74c3c" stroke-width="2" rx="8"/>
-  <text x="100" y="650" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c0392b">
-    Step 4: Linker (ld)
+  <rect x="90" y="735" width="720" height="90" fill="#fff0f5" stroke="#e74c3c" stroke-width="2" rx="8"/>
+  <text x="110" y="760" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c0392b">
+    Step 4: Linker (ld) - OS subprocess
   </text>
   
-  <rect x="100" y="660" width="120" height="45" fill="#fff" stroke="#e74c3c" stroke-width="1" rx="3"/>
-  <text x="160" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Executable</text>
-  <text x="160" y="695" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">File</text>
+  <rect x="110" y="770" width="120" height="45" fill="#fff" stroke="#e74c3c" stroke-width="1" rx="3"/>
+  <text x="170" y="790" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Executable</text>
+  <text x="170" y="805" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">File (hello)</text>
   
-  <text x="250" y="675" font-family="Arial, sans-serif" font-size="11" fill="#555">
+  <text x="250" y="785" font-family="Arial, sans-serif" font-size="11" fill="#555">
     • Resolves external symbol references • Combines object files + libraries
   </text>
-  <text x="250" y="690" font-family="Arial, sans-serif" font-size="11" fill="#555">
+  <text x="250" y="800" font-family="Arial, sans-serif" font-size="11" fill="#555">
     • Creates final executable • Sets up memory layout &amp; entry point
   </text>
+  <text x="250" y="815" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">
+    • All temporary files managed by OS file system
+  </text>
   
-  <!-- Big Arrow to OS -->
-  <path d="M 450 735 L 450 770" stroke="#2c3e50" stroke-width="2" fill="none" marker-end="url(#bigarrow)"/>
-  <text x="460" y="755" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50">./hello</text>
+  <!-- Arrow to execution -->
+  <path d="M 450 875 L 450 915" stroke="#2c3e50" stroke-width="1.5" fill="none" marker-end="url(#bigarrow)"/>
+  <text x="460" y="900" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50">./hello (run executable)</text>
   
-  <!-- OPERATING SYSTEM ENVIRONMENT -->
-  <rect x="50" y="780" width="800" height="180" fill="#f5f5f0" stroke="#95a5a6" stroke-width="3" rx="10"/>
-  <text x="70" y="805" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7f8c8d">
-    3. OPERATING SYSTEM RUNTIME ENVIRONMENT
+  <!-- EXECUTION PHASE -->
+  <rect x="60" y="925" width="780" height="220" fill="#f5f5f0" stroke="#95a5a6" stroke-width="3" rx="10"/>
+  <text x="80" y="950" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7f8c8d">
+    PHASE 3: EXECUTION
+  </text>
+  <text x="350" y="950" font-family="Arial, sans-serif" font-size="14" fill="#7f8c8d">
+    (Program runs as OS Process)
   </text>
   
   <!-- Loader -->
-  <rect x="80" y="825" width="120" height="50" fill="#fff" stroke="#95a5a6" stroke-width="2" rx="5"/>
-  <text x="140" y="845" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">OS Loader</text>
-  <text x="140" y="860" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Loads executable</text>
+  <rect x="90" y="970" width="120" height="60" fill="#fff" stroke="#95a5a6" stroke-width="2" rx="5"/>
+  <text x="150" y="995" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">OS Loader</text>
+  <text x="150" y="1010" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Creates new process</text>
+  <text x="150" y="1020" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Loads executable</text>
   
   <!-- Arrow from loader to memory -->
-  <path d="M 200 850 L 280 850" stroke="#7f8c8d" stroke-width="3" fill="none" marker-end="url(#smallarrow)"/>
+  <path d="M 210 1000 L 290 1000" stroke="#7f8c8d" stroke-width="2" fill="none" marker-end="url(#smallarrow)"/>
   
   <!-- Memory -->
-  <rect x="300" y="825" width="140" height="90" fill="#fff" stroke="#95a5a6" stroke-width="2" rx="5"/>
-  <text x="370" y="845" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Process Memory</text>
-  <text x="370" y="860" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">(RAM)</text>
-  <text x="320" y="880" font-family="Arial, sans-serif" font-size="10" fill="#666">• Stack</text>
-  <text x="380" y="880" font-family="Arial, sans-serif" font-size="10" fill="#666">• Heap</text>
-  <text x="320" y="895" font-family="Arial, sans-serif" font-size="10" fill="#666">• Code</text>
-  <text x="380" y="895" font-family="Arial, sans-serif" font-size="10" fill="#666">• Data</text>
+  <rect x="310" y="970" width="150" height="100" fill="#fff" stroke="#95a5a6" stroke-width="2" rx="5"/>
+  <text x="385" y="990" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Process Memory</text>
+  <text x="385" y="1005" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">(Virtual Memory)</text>
+  <text x="330" y="1025" font-family="Arial, sans-serif" font-size="10" fill="#666">• Stack</text>
+  <text x="410" y="1025" font-family="Arial, sans-serif" font-size="10" fill="#666">• Heap</text>
+  <text x="330" y="1040" font-family="Arial, sans-serif" font-size="10" fill="#666">• Code</text>
+  <text x="410" y="1040" font-family="Arial, sans-serif" font-size="10" fill="#666">• Data</text>
+  <text x="330" y="1055" font-family="Arial, sans-serif" font-size="9" fill="#7f8c8d">OS manages virtual memory</text>
   
   <!-- Arrow from memory to CPU -->
-  <path d="M 440 870 L 520 870" stroke="#7f8c8d" stroke-width="3" fill="none" marker-end="url(#smallarrow)"/>
+  <path d="M 460 1020 L 540 1020" stroke="#7f8c8d" stroke-width="2" fill="none" marker-end="url(#smallarrow)"/>
   
   <!-- CPU -->
-  <rect x="540" y="835" width="120" height="70" fill="#fff" stroke="#95a5a6" stroke-width="2" rx="5"/>
-  <text x="600" y="860" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">CPU</text>
-  <text x="600" y="875" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">Execution</text>
-  <text x="600" y="890" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Fetch-Decode-Execute</text>
+  <rect x="540" y="985" width="170" height="70" fill="#fff" stroke="#95a5a6" stroke-width="2" rx="5"/>
+  <text x="625" y="1010" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">CPU Execution</text>
+  <text x="625" y="1025" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">Fetch-Decode-Execute</text>
+  <text x="625" y="1040" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">OS scheduler manages CPU time</text>
   
-  <text x="80" y="940" font-family="Arial, sans-serif" font-size="12" fill="#555">
-    • OS manages process creation, memory allocation, and program execution
+  <text x="90" y="1090" font-family="Arial, sans-serif" font-size="12" fill="#555">
+    • OS creates new process with PID • Manages memory allocation, file handles, system calls
+  </text>
+  <text x="90" y="1110" font-family="Arial, sans-serif" font-size="12" fill="#555">
+    • Process scheduler gives CPU time slices • Program runs until completion or termination
   </text>
   
-  <!-- Key insight box -->
-  <rect x="80" y="980" width="740" height="80" fill="#e8f8f5" stroke="#1abc9c" stroke-width="2" rx="5"/>
-  <text x="100" y="1005" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#16a085">
-    🔑 Key Insight: GCC is a "Compiler Driver"
-  </text>
-  <text x="120" y="1025" font-family="Arial, sans-serif" font-size="11" fill="#555">
-    • You run ONE command: gcc hello.c -o hello
-  </text>
-  <text x="120" y="1040" font-family="Arial, sans-serif" font-size="11" fill="#555">
-    • GCC automatically orchestrates all 4 internal steps using temporary files
-  </text>
-  <text x="120" y="1055" font-family="Arial, sans-serif" font-size="11" fill="#555">
-    • The separate commands (gcc -E, gcc -S, etc.) are for debugging/learning only
-  </text>
   
   <!-- Arrow marker definitions -->
   <defs>
-    <marker id="bigarrow" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto">
+    <marker id="bigarrow" markerWidth="10" markerHeight="10" refX="11" refY="5" orient="auto">
       <polygon points="0 0, 12 5, 0 10" fill="#2c3e50"/>
     </marker>
-    <marker id="smallarrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="smallarrow" markerWidth="6" markerHeight="6" refX="7" refY="3" orient="auto">
       <polygon points="0 0, 8 3, 0 6" fill="#666"/>
     </marker>
   </defs>
