@@ -51,33 +51,33 @@ OOP provides ways of reusing code in software system.
 
 #### Computer networks
 
-OSI (Open Systems Interconnection) Model
+OSI (Open Systems Interconnection) Model  
 
-+------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
-|  Layer           |  Definition                                                                                   |  Protocols                        |
-+------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
-|7. Application    |Provides network services to user applications                                                 |HTTP, FTP, SMTP, DNS               |
-+------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
-|6. Presentation   |Translates data formats, encryption and compression                                            |TLS, SSL, MIME                     |
-+------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
-|5. Session        |Manages sessions and connection control between hosts. Dialog between application programs.    |RPC, NetBIOS                       |
-+------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
-|4. Transport      |Lowest layer required to the programs for moving the data. Transmission of segments/datagrams  |TCP, UDP                           |
-+------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
-|3. Network        |Routing of packets  between devices. (Equivalent to Internet layer in TCP/IP model)            |IP, ICMP, OSPF, BGP                |
-+------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
-|2. Data Link      |Error-prone physical circuit. Transmission of data frames                                      |Ethernet, PPP, MAC                 |
-+------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
-|1. Physical       |Electrical/optical/radio signaling over physical circuit. Transmission of bit streams          |Cables, Wi-Fi, RJ45, Bluetooth     |
-+------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
++------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+  
+|  Layer           |  Definition                                                                                   |  Protocols                        |  
++------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+  
+|7. Application    |Provides network services to user applications                                                 |HTTP, FTP, SMTP, DNS               |  
++------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+  
+|6. Presentation   |Translates data formats, encryption and compression                                            |TLS, SSL, MIME                     |  
++------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+  
+|5. Session        |Manages sessions and connection control between hosts. Dialog between application programs.    |RPC, NetBIOS                       |  
++------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+  
+|4. Transport      |Lowest layer required to the programs for moving the data. Transmission of segments/datagrams  |TCP, UDP                           |  
++------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+  
+|3. Network        |Routing of packets  between devices. (Equivalent to Internet layer in TCP/IP model)            |IP, ICMP, OSPF, BGP                |  
++------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+  
+|2. Data Link      |Error-prone physical circuit. Transmission of data frames                                      |Ethernet, PPP, MAC                 |  
++------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+  
+|1. Physical       |Electrical/optical/radio signaling over physical circuit. Transmission of bit streams          |Cables, Wi-Fi, RJ45, Bluetooth     |  
++------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+  
 
-OSI model created by ISO in 1984, described in ISO 7498.
-OSI model defines 7 functional layers with the intent to make each layer as independent as possible from each other.
-Three top three layers are related to the application programs services.
-Four bottom layers are concerned with the network itself, providing the general data transport services.
-Data frame - the unit of data.
-Packet - the unit of data.
-IP - Internet Protocol.
-TCP - Transmission Control Protocol.
+OSI model created by ISO in 1984, described in ISO 7498.  
+OSI model defines 7 functional layers with the intent to make each layer as independent as possible from each other.  
+Three top three layers are related to the application programs services.  
+Four bottom layers are concerned with the network itself, providing the general data transport services.  
+Data frame - the unit of data.  
+Packet - the unit of data.  
+IP - Internet Protocol.  
+TCP - Transmission Control Protocol.  
 
 [^1]: [Википедия — Формальный язык](https://ru.wikipedia.org/wiki/%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA) 
